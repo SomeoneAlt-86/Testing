@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <!-- Internal Analytics -->
+    <script type='text/javascript' src='./Postman - Sign In_files/NRJS-8482e4e3e1750395f5d'></script><script nonce=''>
+    var version = 'v&#x3D;1.15.0'.split(';')[1],
+      analytics = {
+        config: {
+          env: 'production',
+          propertyVersion: version,
+          prefixLabel: window.location.search.indexOf('cta=join-team') !== -1 ? 'team_invite_' : '',
+          url: 'https://analytics.getpostman.com/event'
+        },
+        eventQueue: [],
+        recordEvent: function (event) {
+          event.timestamp = new Date();
+          this.eventQueue.push(event);
+        }
+      };
+    </script>
+    <script nonce='' src='./Postman - Sign In_files/analytics.min.js.download' async='' defer=''></script>
+    <!--End Internal Analytics -->
+    
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=320, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <title>Postman - Sign In</title>
+    <link rel='shortcut icon' href='https://identity.getpostman.com/favicon.ico'>
+    <link rel='stylesheet' href='./Postman - Sign In_files/css2'>
+    <link href='./Postman - Sign In_files/css2(1)' rel='stylesheet'>
+    <style>
+      .pm-main-sign-in {
+        margin: 100px auto;
+      }
+      .pm-main-sign-in .pm-card {
+        position: relative;
+        margin: auto;
+      }
+      .pm-main-sign-in .pm-card .pm-logo {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      .pm-main-sign-in .pm-card .heading {
+        padding: 48px 0 24px;
+      }
+      .pm-main-sign-in .pm-card .caption {
+        font-size: 12px;
+        color: #666666;
+      }
+      .pm-main-sign-in .pm-card .heading h4 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1a1a1a;
+        display: inline-block;
+        margin: 0;
+      }
+      .pm-main-sign-in .pm-card .heading .sign-up-link-container {
+        font-size: 12px;
+        color: #1a1a1a;
+        display: inline-block;
+        float: right;
+        line-height: 2.2;
+      }
+      .pm-main-sign-in .pm-card .heading.re-authenticate-user {
+        padding: 56px 0 24px;
+        text-align: center;
+      }
+
+      .pm-main-sign-in .pm-card .heading.re-authenticate-user h4 {
+        font-size: 14px;
+      }
+
+      .pm-main-sign-in form .trouble-signing-in-link {
+        float: right;
+        line-height: 1.8;
+      }
+
+      .pm-main-sign-in form .sign-in-btn {
+        font-weight: 500;
+      }
+
+      .pm-main-sign-in .pm-card .sso-login-btn {
+        text-decoration: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+
+        /* background-color/tertiary */
+        background-color: #f2f2f2;
+
+        /* content-color/secondary */
+        color: #6B6B6B;
+        margin: 0 auto 16px auto;
+      }
+
+      .pm-main-sign-in .pm-card .google-sign-in {
+        text-decoration: none;
+        padding: 0;
+        border-radius: 2px;
+        position: relative;
+        border: none;
+        margin: 0 auto 16px auto;
+        width:100%;
+        display: flex;
+      }
+      .pm-main-sign-in .pm-card .google-sign-in .google-logo {
+        display: inline-block;
+        background-color: #ffffff;
+        height: 38px;
+        width: 38px;
+        margin: 1px 1px;
+        border-radius: 1px;
+        padding: 12px;
+      }
+      .pm-main-sign-in .pm-card .google-sign-in .google-text {
+
+        line-height: 2.8;
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        top: 12px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.21875px;
+      }
+
+      .client-browser-auth {
+        color: #505050;
+        text-align: center;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+
+      .client-browser-auth a{
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .client-auth-info {
+        color: #6B6B6B;
+        text-align: center;
+        margin: 0px auto 8px auto;
+        font-size: 12px;
+      }
+
+      .client-auth-info p {
+        padding: 0 18px;
+      }
+
+      #terms-and-privacy-links {
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      #terms-and-privacy-links a {
+        font-size: 12px;
+        color: #999999;
+        text-align: center;
+        font-weight: inherit;
+      }
+
+      .pm-alert {
+        background: #FFF9E0;
+        border-radius: 4px;
+        color: #6B6B6B;
+        margin-bottom: 24px;
+        padding: 16px;
+        position: relative;
+        font-size: 12px;
+      }
+
+      .pm-alert-icon {
+        position: absolute;
+        top: 18px;
+      }
+
+      .pm-alert-content {
+        margin-left: 32px
+      }
+
+      .pm-alert-content h3 {
+        color: #212121;
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      .pm-awesome-divider {
+        margin: 8px 0 24px 0;
+      }
+
+      #sign-in-form {
+        padding-bottom: 16px;
+      }
+
+      #use-different-email-cta {
+        text-align: center;
+        margin-top: 32px;
+      }
+
+      #use-different-email-cta a {
+        color: #0265D2;
+        font-style: normal;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      #footer div {
+        display: inline-block;
+      }
+
+      #terms-and-privacy-links a:before {
+        content: '\b7\a0';
+      }
+      #terms-and-privacy-links a:hover{
+        text-decoration: none;
+      }
+
+      .pm-team-login-alert {
+        background: #E7F0FF;
+        border-radius: 4px;
+        color: #6B6B6B;
+        margin: 0px 0 16px;
+        padding: 16px;
+        position: relative;
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .pm-team-login-alert-content {
+        margin-left: 32px
+      }
+
+      .pm-team-login-alert-content .team-name {
+        font-weight: 600;
+      }
+
+    </style>
+    <link rel='stylesheet' href='./Postman - Sign In_files/style.min.css'>
+  </head>
+  <body class='inter-fonts' data-trackclicks='default'>
+    <div class='pm-container-fluid'>
+
+      <div class='pm-main-sign-in'>
+        <div class='pm-card'>
+          <div class='pm-logo'></div>
+
+          <div class='heading'>
+            <h4>Sign In</h4>
+            <div class='sign-up-link-container'>
+              <div><a class='pmt_sign-up-instead-lnk' id='sign-up-link' href='https://identity.getpostman.com/signup'>Create Account</a> instead?</div>
+            </div>
+          </div>
+
+
+
+          <div id='notification-div' class='notify-failure notification-container'>
+            <span id='notification-message'></span>
+          </div>
+
+          <form id='sign-in-form'>
+            <div class='pm-form-group'>
+              <label for='username' class='pm-form-label'>Email or Username</label>
+              <input type='text' class='pm-form-control' name='username' id='username' autofocus='' autocomplete='off' autocapitalize='off' spellcheck='true' value=''>
+              <span id='input-error-username' class='input-validation-error'></span>
+            </div>
+            <div class='pm-form-group'>
+              <label for='password' class='pm-form-label'>Password</label>
+              <input type='password' class='pm-form-control' name='password' id='password' autocapitalize='off' spellcheck='true'>
+              <span id='input-error-password' class='input-validation-error'></span>
+            </div>
+            <div class='pm-form-group'>
+              <input type='checkbox' id='remember-me-checkbox' checked=''>
+              <label for='remember-me-checkbox'>Stay signed in for 30 days</label>
+              <a class='trouble-signing-in-link' href='https://identity.getpostman.com/trouble-signing-in'>Forgot Password?</a>
+              <div class='do-not-remember-message' id='do-not-remember-message' style='display: none;'>
+                <span>You will be logged out after 30 minutes of inactivity.</span>
+              </div>
+            </div>
+            <div class='pm-form-group'>
+              <button type='submit' class='pmt_sign-in-btn pm-btn pm-btn-primary sign-in-btn' id='sign-in-btn'>
+                Sign in
+              </button>
+            </div>
+
+            <input type='hidden' name='csrfToken' value='vnzWfXvn3khgXOUaStm9Fyy/ekz+Un9YS0RR8='>
+          </form>
+
+            <div class='pm-awesome-divider-div'>
+              <div class='pm-awesome-divider' data-label='or'></div>
+            </div>
+
+          <a href='https://identity.getpostman.com/google/oauth2' class='pm-btn pm-btn-info google-sign-in'>
+            <div class='google-logo'>
+              <img src='./Postman - Sign In_files/google-logo-icon-sign-in.svg' width='16px' height='16px'>
+            </div>
+            <div class='pmt_sign-in-w-google-btn google-text'>
+              Sign in with Google
+            </div>
+          </a>
+
+          <a id='enterprise-sign-in-link' href='https://identity.getpostman.com/enterprise/login' class='pmt_w-sso-btn pm-btn pm-btn-secondary sso-login-btn'>
+            Sign in with SSO
+          </a>
+
+        </div>
+      </div>
+      <footer id='footer'>
+        <div id='copyright-text'>
+          ©2023 Postman, Inc. All rights reserved.
+        </div>
+        <div id='terms-and-privacy-links'>
+          <a href='https://www.postman.com/legal/eula' target='_blank' title='Terms of use'>Terms of use</a>
+          <a href='https://www.postman.com/legal/privacy-policy' target='_blank' title='Privacy Policy'>Privacy Policy</a>
+        </div>
+      </footer>
+    </div>
+    <script nonce=''>
+      document.querySelector('#sign-in-btn').setAttribute('type', 'submit');
+
+      var signInFormElement = document.getElementById('sign-in-form'),
+          signUpLinkElement = document.getElementById('sign-up-link'),
+          usernameElement = document.getElementById('username'),
+          googleSignInElement = document.querySelector('.google-sign-in'),
+          rememberMeCheckbox = document.getElementById('remember-me-checkbox'),
+          enterpriseSignInLinkElement = document.getElementById('enterprise-sign-in-link'),
+          troubleSigningInLinkElement = document.getElementsByClassName('trouble-signing-in-link')[0],
+          loginWithBrowserElement = document.querySelector('.client-browser-auth a'),
+          reAuthenticate = '',
+          continueURL = null,
+          teamId = '',
+          intent = '';
+
+      if (window.URLSearchParams) {
+        var urlSearchParams = new URLSearchParams(window.location.search);
+
+        continueURL = urlSearchParams.get('continue');
+      }
+
+      loginWithBrowserElement && loginWithBrowserElement.addEventListener('click', function (e) {
+        analytics && analytics.recordEvent({
+          action: 'initiate_signin',
+          label: 'browser_based_login_button'
+        });
+
+        if (rememberMeCheckbox.checked) { return; }
+
+        let url = new URL(loginWithBrowserElement.href)
+
+        url.searchParams.append('doNotRemember', 1);
+
+        loginWithBrowserElement.href = url.toString();
+      });
+
+      [signUpLinkElement, troubleSigningInLinkElement].forEach(function (element) {
+        if (!element || !element.addEventListener) { return; }
+        element.addEventListener('click', function (e) {
+          var currentHref = this.href;
+
+          if (!usernameElement.value || !usernameElement.value.trim()) { return; }
+
+          if (currentHref.includes('?')) {
+
+            // No need to append email query param at the very end since it already
+            // contains a email param
+            if (!currentHref.includes('&email=') && !currentHref.includes('?email=')){
+              this.href = currentHref + '&email=' + encodeURIComponent(usernameElement.value);
+            }
+          }
+          else {
+            this.href = currentHref + '?email=' + encodeURIComponent(usernameElement.value);
+          }
+        })
+      })
+
+      function linkMarkupToHTML (markupText) {
+        var pattern = /\[([^[\]]+)\|([^[\]]+)\]/g,
+          replacementString = '<a href='$2'>$1</a>';
+
+        return markupText.replace(pattern, replacementString);
+      }
+
+      function hideInlineNotification(inputElement, inlineMessageElement) {
+        inputElement && inputElement.classList.remove('border-failure');
+        inlineMessageElement && (inlineMessageElement.style.display = 'none');
+
+        return false;
+      }
+
+      function showInlineNotification(inputElement, inlineMsgElement, message) {
+        inputElement && inputElement.classList.add('border-failure');
+        inlineMsgElement && (inlineMsgElement.style.display = 'block');
+        inlineMsgElement.innerHTML = linkMarkupToHTML(message);
+
+        return false;
+      }
+
+      function showGlobalNotification(notificationElement, notificationMsgElement, message) {
+        notificationMsgElement.innerHTML = linkMarkupToHTML(message);
+        notificationElement && (notificationElement.style.display = 'block');
+      }
+
+      function hideGlobalNotification(notificationElement) {
+        notificationElement && (notificationElement.style.display = 'none');
+      }
+
+      function handleCheckBox() {
+        var doNotRememberMessageElement = document.getElementById('do-not-remember-message');
+
+        if (!doNotRememberMessageElement || !rememberMeCheckbox) { return; }
+
+        !rememberMeCheckbox.checked ?
+            doNotRememberMessageElement.style.display = 'block' :
+            doNotRememberMessageElement.style.display = 'none';
+      }
+
+      function onInputHandler(e) {
+        var inputElement = document.getElementById(e.target.id),
+            inlineMsgElement = document.getElementById('input-error-' + e.target.id);
+
+        inputElement && inputElement.classList.remove('border-failure');
+        inlineMsgElement && (inlineMsgElement.style.display = 'none');
+      }
+
+      document.addEventListener('DOMContentLoaded', function(e) {
+        if ('') {
+          showGlobalNotification(document.getElementById('notification-div'), document.getElementById('notification-message'), '');
+        }
+        handleCheckBox();
+
+        var formElements = document.getElementsByClassName('pm-form-control');
+
+        for (var i = 0; i < formElements.length; i++) {
+          if (formElements[i] && formElements[i].id) {
+            var inputElement = document.getElementById(formElements[i].id);
+            inputElement.oninput = onInputHandler;
+            inputElement.onpropertychange = inputElement.oninput; // for IE8
+          }
+        }
+      });
+
+      analytics && analytics.recordEvent({
+        action: 'land_signin',
+        label: 'login',
+        meta: { url: continueURL }
+      });
+
+      signUpLinkElement && signUpLinkElement.addEventListener('click', function (e) {
+        analytics && analytics.recordEvent({
+          action: 'create_account_cta_click',
+          label: 'login',
+          meta: { url: continueURL }
+        });
+      });
+
+      enterpriseSignInLinkElement && enterpriseSignInLinkElement.addEventListener('click', function () {
+        analytics && analytics.recordEvent({
+          action: 'enterprise_signin_cta_click',
+          label: 'login',
+          meta: { url: continueURL }
+        });
+      });
+
+      googleSignInElement && googleSignInElement.addEventListener('click', function () {
+        analytics && analytics.recordEvent({
+          action: 'initiate_signin',
+          label: 'google_login',
+          meta: { url: continueURL }
+        });
+        var googleSignInURL =  new URL(this.href);
+
+        if (rememberMeCheckbox && !rememberMeCheckbox.checked) {
+          googleSignInURL.searchParams.set('doNotRemember', 1);
+        }
+
+        if (intent && teamId) {
+          googleSignInURL.searchParams.set('intent', intent);
+          googleSignInURL.searchParams.set('teamId', teamId);
+        }
+
+        this.href = googleSignInURL.href;
+      });
+
+      rememberMeCheckbox && rememberMeCheckbox.addEventListener('click', handleCheckBox);
+
+      signInFormElement && signInFormElement.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var usernameElement = document.getElementById('username'),
+            passwordElement = document.getElementById('password'),
+            inputErrorUsernameElement = document.getElementById('input-error-username'),
+            inputErrorPasswordElement = document.getElementById('input-error-password'),
+            signInBtn = document.getElementById('sign-in-btn'),
+            formData = {
+              username: usernameElement.value && usernameElement.value.trim(),
+              password: passwordElement.value
+            },
+            notificationDiv = document.getElementById('notification-div'),
+            notificationMsgElement = document.getElementById('notification-message'),
+            errorMessage = 'We hit a snag signing you in. Try again.',
+            xhr = new XMLHttpRequest();
+
+        // Remove input-validation-error-message, notifications
+        hideGlobalNotification(notificationDiv);
+
+        [{ inputElement: usernameElement, inlineMsgElement: inputErrorUsernameElement },
+         { inputElement: passwordElement, inlineMsgElement: inputErrorUsernameElement }
+        ].forEach(function (obj) {
+          hideInlineNotification(obj.inputElement, obj.inlineMsgElement);
+        });
+
+        if (!formData.username) {
+          showInlineNotification(usernameElement, inputErrorUsernameElement, 'Please enter your email address or username.');
+        }
+
+        if (!formData.password) {
+          showInlineNotification(passwordElement, inputErrorPasswordElement, 'Please enter your password.');
+        }
+
+        if (!formData.password || !formData.username) { return; }
+
+        (rememberMeCheckbox && !rememberMeCheckbox.checked) && (formData.doNotRemember = true);
+
+        (teamId) && (formData.teamId = teamId);
+        (intent) && (formData.intent = intent);
+
+        xhr.onreadystatechange = function () {
+          if (this.readyState === XMLHttpRequest.DONE) {
+            var responseJSON;
+
+            try {
+              responseJSON = JSON.parse(this.responseText);
+            }
+            catch (e) {
+              console.error('Error while parsing xhr response: ', e);
+              responseJSON = {};
+            }
+
+            if (this.status === 200) {
+              // don't remove processing indicator in case of success response
+
+              if (!responseJSON.redirect) {
+                return showGlobalNotification(notificationDiv, notificationMsgElement, errorMessage);
+              }
+
+              analytics && analytics.recordEvent({
+                action: 'successful_signin',
+                label: 'login',
+                meta: { url: continueURL }
+              });
+
+              return location.assign(responseJSON.redirect);
+            }
+
+            else {
+              // Remove processing indicator.
+              (signInBtn && signInBtn.classList) &&  signInBtn.classList.remove('pm-btn-processing');
+
+              if (responseJSON.error) {
+                var errorField = responseJSON.error.options && responseJSON.error.options.field;
+
+                if (responseJSON.error.context && responseJSON.error.context.message) {
+                  errorMessage = responseJSON.error.context.message;
+                }
+                else if (responseJSON.error.message) {
+                  errorMessage = responseJSON.error.message;
+                }
+
+                if (responseJSON.error.name === 'EntityNotFound') {
+                  return reAuthenticate ?
+                    showGlobalNotification(notificationDiv, notificationMsgElement, errorMessage) :
+                    showInlineNotification(usernameElement, inputErrorUsernameElement, errorMessage);
+                }
+
+                switch (errorField) {
+                  case 'email':
+                    return showInlineNotification(emailElement, inputErrorEmailElement, errorMessage);
+
+                  case 'username':
+                    return showInlineNotification(usernameElement, inputErrorUsernameElement, errorMessage);
+
+                  case 'password':
+                    return showInlineNotification(passwordElement, inputErrorPasswordElement, errorMessage);
+
+                  default:
+                    break;
+                }
+              }
+
+              if (this.status === 429) {
+                signInBtn && (signInBtn.disabled = true);
+                var retryAfter = responseJSON.error && responseJSON.error.retryAfter;
+
+                if (retryAfter) {
+                  setTimeout(function () {
+                    signInBtn && (signInBtn.disabled = false);
+                  }, retryAfter);
+                }
+              }
+
+              return showGlobalNotification(notificationDiv, notificationMsgElement, errorMessage);
+            }
+          }
+        };
+
+        analytics && analytics.recordEvent({
+          action: 'initiate_signin',
+          label: 'login',
+          meta: { url: continueURL }
+        });
+
+        xhr.open('POST', '/login', true);
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.setRequestHeader('X-CSRF-Token', document.getElementsByName('csrfToken')[0].value);
+
+        // Add processing indicator.
+        (signInBtn && signInBtn.classList) && signInBtn.classList.add('pm-btn-processing');
+        xhr.send(JSON.stringify(formData));
+      });
+    </script>
+  
+  <script id='pmTechSDK' nonce=''>
+  var ns;'undefined'==typeof exports?(window.pm=window.pm||{},ns=window.pm):ns=exports,ns.version='v1.1.112',ns.runtime='object'==typeof window,ns.log=function(t){const n=window.pm.output||[];window.pm.output=n,n.push(t)},ns.drivePubId=function(t){const n=window.location.href,e='pub_id=';let o,c;if(n.match(e)){if(c=n.split(e).pop().split('&').shift(),o='_PUB_ID='+c+'; path=/',document.cookie=o,t){let t=n.replace(e+c,'');t=t.replace('?&','?'),t=t.replace('&&','&');t.split('?').pop()||(t=t.split('?').shift());const o=t.length-1;'&'===t.charAt(o)&&(t=t.substring(0,o)),window.location.replace(t)}return o}return ns.getPubId()},ns.driveCampaignId=function(t){let n;const e='dcid=',o=t&&t.dcid||window.location.search&&window.location.search.match(e)&&window.location.search.split(e).pop().split('&').shift()||(document.cookie.match('(^|;) ?dcid=([^;]*)(;|$)')||[])[2];let c,i;const a=t&&t.form,s=t&&t.url||window.location.href;return function(t){const n=t;let c;const i=o&&o.replace(e,'');t&&(n.tagName?o&&!n.driver_campaign_id&&(c=document.createElement('input'),c.type='hidden',c.name='driver_campaign_id',c.value=i,n.appendChild(c)):o&&(n.driver_campaign_id=i))}(a),s.match(e)?(c=s.split(e).pop().split('&').shift(),i=new Date,i.setDate(i.getDate()+30),n='dcid='+c+'; expires='+i.toUTCString()+'; path=/',document.cookie=n,n):t},ns.enablePostmanAnalytics=function(t,n,e){if('function'!=typeof t||t.postmanAnalyticsEnabled||navigator.doNotTrack&&!n._disableDoNotTrack)return t;function o(t){return t.replace(/'/gi,''')}function c(t){return'string'==typeof t&&t.split(window.location.host).pop()}return n||(n={}),t.postmanAnalyticsEnabled=!0,function(i,a,s,d){const r='load'!==a||window.location.href!==ns.currentURL;if(!r)return!1;t.apply(this,arguments);const p='gtm.uniqueEventId';let m,l,u,f;const w=a||e;ns.initCategory||(ns.initCategory=i);const h={category:i,action:w,indexType:'client-events',property:n._property||document.location.host,traceId:ns.traceId||n._traceId||'anonymous',timestamp:(new Date).toISOString()},g=c(ns.currentURL)||document.referrer||ns.externalURL||'';h.meta={url:c(g)},s&&(h.entityId=s),'load'===h.action&&h.entityId&&document.body&&document.body.id&&(h.entityId=h.entityId+'#'+document.body.id),d&&(m=parseInt(d,10),l=m&&!m.isNaN&&m||null,f='string'==typeof d,u=f&&d.match(':')&&d.split(':').pop()||f&&d||'object'==typeof d&&o(JSON.stringify(d))||'',l&&(h.value=l),u&&(s?h.entityId+=':'+u:h.entityId=u));const y=Object.keys(n)||[];function b(t){const e=new XMLHttpRequest;e.open('POST',n._url),e.setRequestHeader('Accept','application/json'),e.setRequestHeader('Content-type','text/plain'),e.send(t)}function I(t,n){const e=t&&t.split(',')||[],o=e.length;let c,i;for(c=0;c<o;c+=1){const t=e[c];if(i=-1!==n.indexOf(t),i)break}return i}return y.forEach((function(t){'_'!==t.charAt(0)&&(h[t]=n[t])})),a||'object'!=typeof i||(h.action=i.action||i.event||i[Object.keys(i)[0]],i[p]&&(h.category=p+'-'+i[p])),'local'===h.env&&(h.env='beta'),'object'==typeof h.category&&h.category&&'string'==typeof h.category.category&&(h.category=h.category.category),['category','event','label'].forEach((function(t){'object'==typeof h[t]&&(h[t]=h[t]&&o(JSON.stringify(h[t])))})),h.userId=ns.getPubId()||(document.cookie.match('(^|;) ?_pm=([^;]*)(;|$)')||[])[2]||h.userId,ns.userId=h.userId,ns.traceId=ns.traceId.split('|').shift()+'|'+ns.userId,window.name=ns.traceId,h.category&&h.action&&'function'==typeof n.fetch&&n.fetch(n._url,h)||h.entityId&&'object'==typeof document&&(()=>{const t=n._allow&&I(n._allow,document.location.pathname)||!n._allow&&!0,e=n._disallow&&I(n._disallow,document.location.pathname),o=btoa(JSON.stringify(h));if(t&&!e){if(fetch){if('load'===h.action){if(h.action&&!r)return ns.trackIt(),!1;h.entityId=h.entityId.split('#').shift()}ns.traceId&&(h.traceId=ns.traceId),fetch(n._url,{method:'POST',headers:{Accept:'text/html','Content-Type':'text/html'},body:o,mode:'no-cors',keepalive:!0}).catch((function(t){window.pm.log(t)})),ns.event=h}else b(o);ns.currentURL=window.location.href,-1===h.meta.url.indexOf(document.location.host)&&(ns.externalURL=h.meta.url)}})(),!0}},ns.ga=function(){'function'==typeof window.ga&&window.ga.apply(this,arguments)},ns.getEnv=function(t){let n;n='production';const e=t||document.location.hostname;return['beta','local','stag'].forEach((function(t){e.match(t)&&(n=t)})),n},ns.getPubId=function(){return(document.cookie.match('(^|;) ?_PUB_ID=([^;]*)(;|$)')||[])[2]},ns.setScalp=function(t){if('object'==typeof window){const n=(document.location.search&&document.location.search.match('dcid=([^;]*)(;|$)')||[])[1],e=n&&n.split('&').shift()||(document.cookie.match('(^|;) ?dcid=([^;]*)(;|$)')||[])[2],o=document.location.search.substr(1).split('&'),c=[];o.forEach((t=>{const n=t.match('([UTM|utm].*)=([^;]*)(;|$)');n&&(-1!==n[0].indexOf('utm')||-1!==n[0].indexOf('UTM'))&&c.push(n[0])}));const i=document.location.host.split('.'),a=i.pop(),s=i.pop(),d=c.length&&c.join('.')||'',r='PM.',p=r+btoa((new Date).toISOString()),m=window.name&&window.name.match('|PM.')&&window.name.split('|').pop()||(document.cookie.match('(^|;) ?_pm=([^;]*)(;|$)')||[])[2],l=function(t){const n=new Date;return n.setDate(n.getDate()+1080),'_pm='+t+'; expires='+n.toUTCString()+'; domain=.'+s+'.'+a+'; path=/'};(function(t){const n=-1!==document.cookie.indexOf('_pm'),e=-1===t.indexOf(r),o=-1!==document.cookie.indexOf(r);(!n||e||!window.location.hostname.match(/\.postman.com/)&&o)&&(document.cookie=l(t))})(m||p);const u='pm'+btoa((new Date).getTime());'string'==typeof window.name&&'pm'===window.name.substring(0,2)||(e&&-1===window.name.indexOf('DCID.')?window.name=u+'|DCID.'+e+(d&&'|'+d||'')+'|'+(m||p):window.name=u+(d&&'|'+d||'')+'|'+(m||p));const f=window.parent&&window.parent.name||window.name,w=function(){window.pm.scalpCount||(window.pm.scalpCount=0),window.pm.scalpCount+=1},h=ns.getPubId()||m||window.name.split('|').pop(),g={env:'function'==typeof window.pm.getEnv&&window.pm.getEnv()||'production',type:'events-website',userId:h,_allow:!t.disllow&&t.allow,_disableDoNotTrack:void 0===t.disableDoNotTrack||t.disableDoNotTrack,_disallow:!t.allow&&t.disallow,_property:t.property||document.location.host,_traceId:f},y=g.env.match('prod')?'https://bi.pst.tech/events':'https://bi-beta.pst.tech/events';g._url=t.url||y,document.cookie='_pm.traceId='+f+'; domain=.'+s+'.'+a+'; path=/',window.pm.scalp=window.pm.enablePostmanAnalytics(w,g),window.pm.traceId=f,window.pm.userId=h}},ns.getTraceUrl=function(t){const n=-1!==t.indexOf('?')?'&':'?';return t+n+'trace='+window.pm.traceId},ns.trace=function(t){document.location.href=ns.getTraceUrl(t)},ns.getUtmUrl=function(t){const n=-1!==t.indexOf('?')?'&':'?',e=window.pm.traceId.split('.').pop(),o=window.pm.traceId.split('.'+e).shift().substr(1).split('.'),c=[];return o.forEach((t=>{const n=t.match('([UTM|utm].*)=([^;]*)(;|$)');n&&(-1!==n[0].indexOf('utm')||-1!==n[0].indexOf('UTM'))&&c.push(n[0])})),t+n+(c.length&&c.join('&')||'utm='+document.location.host)},ns.utm=function(t){let n=ns.getUtmUrl(t);n.match('trace=')||(n=n+'&trace='+window.pm.traceId),document.location.href=n},ns.trackClicks=function(t,n){const e=function(e){const o=document.body&&document.body.id&&'#'+document.body.id||'';if(t){const c=e.target.getAttribute(t);c&&window.pm.scalp(n||ns.initCategory,'click','target',o+c)}else if(!t&&('string'==typeof e.target.className||'string'==typeof e.target.id)){const t=e.target.className||e.target.id||e.target.parentNode.className||-1;if('string'==typeof t){const c=document.location.pathname+o+':'+e.target.tagName+'.'+t.split(' ').join('_');try{window.pm.scalp(n||ns.initCategory,'click',c)}catch(t){window.pm.log(t.message)}}}};document.body.getAttribute('data-trackClicks')||document.body.addEventListener('mousedown',e,!0),document.body.setAttribute('data-trackClicks',t||'default')},ns.driveTrack=function(t){let n;const e='_track=',o=t&&t._track||window.location.search&&window.location.search.match(e)&&window.location.search.split(e).pop().split('&').shift()||(document.cookie.match('(^|;) ?_track=([^;]*)(;|$)')||[])[2],c=t&&t.url||window.location.href,i=ns.getEnv(),a=i.match('stag')?'stage':i;return ns.tracking=!0,ns.trackIt(),c.match(e)?(n='postman-'+a+'.track='+o+'; path=/',document.cookie=n,n):t},ns.trackIt=function(){const t=(document.cookie.match('(^|;) ?postman-[a-z]+.track=([^;]*)(;|$)')||[])[2];if(t&&ns.tracking){let n=document.location.href;const e=-1===n.indexOf('?')?'?':'&';-1===n.indexOf('_track')&&'default'!==t&&(n=`${n}${e}_track=${t}`,document.location.replace(n))}},ns.xhr=function(t,n){const e=new XMLHttpRequest,o='t='+(new Date).getTime(),c=-1===t.indexOf('?')?'?':'&',i=t+c+o;e.withCredentials=!0,e.addEventListener('readystatechange',(function(){4===this.readyState&&n(this.responseText)})),e.open('GET',i),e.send()},ns.bff=function(t,n,e){const o=(e?'/mkapi/':'https://www.postman.com/mkapi/')+t+'.json';ns.xhr(o,n)},ns.rt=function(t){ns.bff('pmTech',(function(n){if(n){const e='pmTechSDK-runtime';if(!document.getElementById(e))try{const o=JSON.parse(n),c=o.pmTech,i=o[t];if(-1===c.indexOf(ns.version)){const t=document.createElement('script');t.setAttribute('id',e),t.innerText=c,document.head.appendChild(t);const n=document.getElementById('pmTechConfig'),o=i||n&&n.innerText||document.getElementById('pmTechSDK').innerText.split('<pmTechConfig>').pop();if(o){const t=document.createElement('script');t.setAttribute('id','pmTechConfig-runtime'),t.innerText=o.split('</pmTechConfig>').shift(),document.head.appendChild(t)}}}catch(t){ns.log(t)}}}),'localhost'===document.location.hostname||!!document.location.hostname.match(/\.postman(-beta)?\.com/))},ns.universal&&ns.rt(ns.universal);
+  </script>
+  <script id='pmTechConfig' nonce=''>
+  window.pm.setScalp({ property: 'pm-identity' });
+  window.pm.scalp(
+    'pm-analytics',
+    'load',
+    document.location.pathname
+  );
+  window.pm.driveCampaignId();
+  window.pm.trackClicks();
+  </script>
+
+</body></html>
